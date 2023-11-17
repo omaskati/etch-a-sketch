@@ -13,7 +13,21 @@ function createGrid(size){
         for (let j = 0; j < size; j++){
             let cell = document.createElement('div');
             cell.classList.add("cell");
+            cell.addEventListener("mouseenter", ()=>{
+                fillCell(cell);
+            });
+            cell.addEventListener("mouseleave", ()=>{
+                clearCell(cell);
+            })
             row.appendChild(cell);
         }
     }
+}
+
+function fillCell(cell){
+    cell.classList.add("filled");
+}
+
+function clearCell(cell){
+    cell.classList.remove("filled");
 }
