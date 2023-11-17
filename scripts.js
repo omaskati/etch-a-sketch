@@ -1,6 +1,12 @@
 
 const container = document.querySelector("#container");
-createGrid(16);
+const sizeButton = document.querySelector("button#setSize");
+sizeButton.addEventListener("click", getSizeFromUser)
+
+const DEFAULT_GRID_SIZE = 16;
+let currentGridSize = DEFAULT_GRID_SIZE;
+
+createGrid(DEFAULT_GRID_SIZE);
 
 // MAKE 16 x 16 DIV GRID
 function createGrid(size){
@@ -30,4 +36,20 @@ function fillCell(cell){
 
 function clearCell(cell){
     cell.classList.remove("filled");
+}
+
+function clearGrid(){
+    container.innerHTML="";
+}
+
+function getSizeFromUser(){
+    let size = 0;
+     do{
+       size = prompt("Enter the number of squares per side (1-100)", currentGridSize);
+       if(size === null) return;
+     }
+    while(size < 1 || size > 100);
+    clearGrid();
+    currentGridSize = size;
+    createGrid(size);
 }

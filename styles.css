@@ -1,18 +1,29 @@
 html{
-    background-color: gray;
+    background-color: #84210d;
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+    margin:0;
+    padding:0;
+    font-size: 60px;
+    font-family:cursive;
+    color: rgb(142, 115, 46);
 }
 
 div#container{
-    width:960px;
+    width: 960px;
     height: 960px;
     margin: 20px auto;
 
+    background-color: gray;
     border: 1px solid black;
 
     display:flex;
     flex-flow: column nowrap;
-    
-
 }
 
 div.row{
@@ -24,6 +35,11 @@ div.row{
 div.cell{
     border: 1px solid black;
     flex:1;
+}
+
+button#setSize{
+    padding: 10px;
+    font-size: 20px;
 }
 
 .filled{
