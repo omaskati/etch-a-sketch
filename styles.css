@@ -1,0 +1,27 @@
+html{
+    background-color: gray;
+}
+
+div#container{
+    width:960px;
+    height: 960px;
+    margin: 20px auto;
+
+    border: 1px solid black;
+
+    display:flex;
+    flex-flow: column nowrap;
+    
+
+}
+
+div.row{
+    display: flex;
+    flex-flow:row nowrap;
+    flex:1;
+}
+
+div.cell{
+    border: 1px solid black;
+    flex:1;
+}
