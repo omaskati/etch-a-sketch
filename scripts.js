@@ -19,6 +19,7 @@ function createGrid(size){
         for (let j = 0; j < size; j++){
             let cell = document.createElement('div');
             cell.classList.add("cell");
+            cell.style.backgroundColor = "rgba(0,0,0,0.5)";
             cell.addEventListener("mouseenter", ()=>{
                 fillCell(cell);
             });
@@ -31,11 +32,18 @@ function createGrid(size){
 }
 
 function fillCell(cell){
-    cell.classList.add("filled");
+    //cell.classList.add("filled");
+    let bgColor = cell.style.backgroundColor;
+    let alpha = bgColor.substring(bgColor.length-5,bgColor.length-1);
+    if(alpha <1){
+        let newAlpha = +alpha+0.05;
+        cell.style.backgroundColor = `rgba(0,0,0,${newAlpha})`;
+    }
+    
 }
 
 function clearCell(cell){
-    cell.classList.remove("filled");
+    //cell.classList.remove("filled");
 }
 
 function clearGrid(){
